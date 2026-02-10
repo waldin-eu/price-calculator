@@ -3,7 +3,6 @@
   const vatEl = document.getElementById('vat');
   const discountEl = document.getElementById('discount');
   const resultEl = document.getElementById('result');
-  const hintEl = document.getElementById('hint');
   const calcBtn = document.getElementById('calcBtn');
   const resetBtn = document.getElementById('resetBtn');
 
@@ -15,24 +14,21 @@
     const discount = parseFloat(discountEl.value) || 0;
 
     if (!Number.isFinite(brutto)) {
-      resultEl.textContent = '—';
-      hintEl.textContent = 'Enter a brutto price to calculate.';
+      resultEl.textContent = '€ —';
       return;
     }
 
     // Final = brutto / ((100 + VAT)/100) * ((100 - discount)/100)
     const finalPrice = brutto / ((100 + vat) / 100) * ((100 - discount) / 100);
 
-    resultEl.textContent = `${round2(finalPrice)} €`;
-    hintEl.textContent = `Computed as: ${brutto} ÷ (1 + ${vat}% VAT) × (1 − ${discount}% discount)`;
+    resultEl.textContent = `€ ${round2(finalPrice)}`;
   }
 
   function reset() {
     bruttoEl.value = '';
     vatEl.value = '';
     discountEl.value = '';
-    resultEl.textContent = '—';
-    hintEl.textContent = 'Formula: brutto ÷ (1 + VAT) × (1 − discount)';
+    resultEl.textContent = '€ —';
     bruttoEl.focus();
   }
 
