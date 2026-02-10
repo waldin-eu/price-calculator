@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Final Price Calculator</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" aria-label="Final price calculator">
+      <header class="header">
+        <h1>Final Price Calculator</h1>
+        <p class="sub">Enter brutto price, VAT, and discount to get your final price.</p>
+      </header>
+
+      <form class="form" onsubmit="return false;">
+        <div class="field">
+          <label for="brutto">BRUTTO PRICE</label>
+          <div class="input-row">
+            <span class="prefix" aria-hidden="true">PLN</span>
+            <input type="number" id="brutto" inputmode="decimal" step="0.01" placeholder="e.g. 1200" autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="field">
+            <label for="vat">YOUR COUNTRY VAT (%)</label>
+            <input type="number" id="vat" inputmode="decimal" step="0.01" placeholder="e.g. 23" autocomplete="off" />
+          </div>
+
+          <div class="field">
+            <label for="discount">YOUR AGREED DISCOUNT (%)</label>
+            <input type="number" id="discount" inputmode="decimal" step="0.01" placeholder="e.g. 10" autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn" id="calcBtn">Calculate</button>
+          <button type="button" class="btn secondary" id="resetBtn">Reset</button>
+        </div>
+
+        <div class="result" role="status" aria-live="polite">
+          <div class="result-label">FINAL PRICE</div>
+          <div class="result-value" id="result">—</div>
+          <div class="result-hint" id="hint">Formula: brutto ÷ (1 + VAT) × (1 − discount)</div>
+        </div>
+      </form>
+
+      <footer class="footer">
+        <span>Runs locally in your browser • No data is sent anywhere</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
