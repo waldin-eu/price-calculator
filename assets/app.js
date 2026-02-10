@@ -23,7 +23,7 @@
     // Final = brutto / ((100 + VAT)/100) * ((100 - discount)/100)
     const finalPrice = brutto / ((100 + vat) / 100) * ((100 - discount) / 100);
 
-    resultEl.textContent = round2(finalPrice);
+    resultEl.textContent = `${round2(finalPrice)} €`;
     hintEl.textContent = `Computed as: ${brutto} ÷ (1 + ${vat}% VAT) × (1 − ${discount}% discount)`;
   }
 
