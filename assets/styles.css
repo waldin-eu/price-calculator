@@ -16,14 +16,13 @@ body{
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
   color: var(--text);
 
-  background-color: #f5f7fa;
+  background-color: #000;
 }
 
 .wrap{
   min-height: 100vh;
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  justify-items: center;
+  place-items: center;
   padding: 24px;
 }
 
@@ -164,12 +163,13 @@ input:focus{
   color: rgba(0,0,0,.55);
   text-align: center;
 }
-.logo-band{
-  width: min(680px, 100%);
-  height: 90px;
+.logo-below{
+  margin-top: 16px;
+  height: 64px;
+  width: 100%;
   background-image: url("waldin-bg.png");
-  background-repeat: repeat-x;
-  background-size: 220px;
+  background-repeat: no-repeat;
+  background-size: 180px;
   background-position: center;
   opacity: 0.9;
 }
